@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        body{
+            font: normal 1.2em Arial;
+            background-color: rgba(10, 10, 10, 0.700);
+        }
+        div#area{
+            background-color: green;
+            width: 450px;
+            text-align: center;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.450);
+            margin: auto;
+        }
+        input.number{
+            width: 70px;
+            text-align: right;
+        }
+        div#resultado{
+            margin-top: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">        
+        <h1>Somano Valores</h1>
+        <input type="number" name="txt1" id="txt1" class="number"> +
+        <input type="number" name="txt2" id="txt2" class="number">
+        <input type="button" value="Somar" onclick="somar()">
+        
+        <div id="resultado">
+            Resultado...
+        </div>        
+    </div>
+    
+    <script>
+        function somar(){
+            // pegando numero em string
+            let txtnum01 = document.getElementById('txt1')
+            let txtnum02 = document.getElementById('txt2')
+            // converte string para numero
+            let num01 = Number(txtnum01.value)
+            let num02 = Number(txtnum02.value)
+
+            let resul = document.getElementById('resultado')
+            let soma = num01 + num02
+            
+            resul.innerHTML = `A soma entre ${num01} e ${num02} e igual a <strong>${soma}</strong>`
+        }
+    </script>
+</body>
+</html>
