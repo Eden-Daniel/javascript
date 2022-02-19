@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem de Voto</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+            font: normal 1.2em Arial;
+                       
+        }
+        div{
+            background-image: linear-gradient(to bottom, #0096ff, #0095ffa4 );
+            width: 600px;
+            padding: 15px;
+            margin-top: 20px;
+            margin-left: 15px;
+            border-radius: 15px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.400);
+        }
+        p#result{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Sistema de Votação</h1>
+        <p id="apresent">Olá, tudo bme.</p>
+        <p>Diga sua idade para saber se você tem direito a votar no Brasil.</p>
+        <input type="number" name="txtnum" id="txtnum">
+        <input type="button" value="Verificar" onclick="verificar()">
+        <p id="result">Resultado....</p>
+    </div>
+
+    <script>
+    // pegando nome inicial    
+    var nome = prompt('Qual é o seu nome?')
+    // pegando dia e hora
+    var diasem = 'Dia'
+    var data = new Date()
+    var hora = data.getHours()
+    var minu = data.getMinutes()
+    var dia = data.getDay()
+    
+
+    var apresent = document.getElementById('apresent')
+    var txtnum = document.getElementById('txtnum')    
+    var result = document. getElementById('result')
+
+    // selecionando o dia da semana
+    switch(dia){
+        case 0:
+            diasem = 'Domingo'
+            break       
+        case 1:
+            diasem = 'Segunda'
+            break
+        case 2:
+            diasem = 'Terça'
+            break
+        case 3:
+            diasem = 'Quarta'
+            break
+        case 4:
+            diasem = 'Quinta'
+            break
+        case 5: 
+            diasem = 'Sexta'
+            break
+        case 6: 
+            diasem = 'Sábado'
+            break
+        default:
+            diasem = '[ERRO] dia não indentificado'             
+    }
+
+
+    if(hora > 5 && hora < 12){
+            apresent.innerHTML = `Bom Dia, <strong>${nome}!</strong>, tenha um otimo ${diasem}`
+            } else if( hora <= 18){
+                apresent.innerHTML = `Boa Tarde, <strong>${nome}!</strong>, tenha um otimo ${diasem} `
+            } else if(hora <= 23.59){
+                apresent.innerHTML = `Boa Noite, <strong>${nome}!</strong>, tenha um otimo ${diasem} `
+            } else {
+                apresent.innerHTML = `Está de Madrugada, <strong>${nome}!</strong>, mas tenha um otimo ${diasem} `
+            }
+
+    function verificar(){
+        let idade = Number(txtnum.value)        
+        if(idade == 0){
+            alert('[ERRO] Você não iformou sua idade!)')
+        } else if(idade < 16){
+            result.innerHTML = `<strong>Você não pode votar.</strong> <br> ${diasem}, ${hora}:${minu} Horas`
+        } else if( idade >= 18 && idade <= 67){
+            result.innerHTML = `<strong>Voto obrigatorio.</strong> <br> ${diasem}, ${hora}:${minu} Horas`
+        } else {
+            result.innerHTML = `<strong>Voto opicional.</strong> <br> ${diasem}, ${hora}:${minu} Horas`
+        }
+    }            
+    </script>    
+</body>
+</html>
