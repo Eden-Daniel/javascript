@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+    <style>
+        body{
+            font: normal 1.2em Arial;
+            background-color:rgba(182, 182, 182, 0.570);
+        }
+        div{
+            margin: auto;
+            width: 500px;
+            padding: 10px;
+            border: 1px solid black ;
+            border-radius: 10px;
+            text-align: center;
+            background-color: rgba(0, 110, 255, 0.600);
+        }
+        p#resultado{
+            margin-top: 50px;
+        }
+            
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Sistema de Velocidade</h1>
+        <p>Qual é o su país: <input type="text" name="pais" id="pais"></p>
+        <p>Velocidade do carro: <input type="number"name="txtvelo" id="txtvelo"></p>
+        <input type="button" value="testar" onclick="testar()">
+        <p id="resultado">Aguarde...</p>        
+    </div>
+    <script>
+        function testar(){
+            let inputPais = document.getElementById('pais')
+            let pais = inputPais.value
+            let txtvelo = document.getElementById('txtvelo')
+            let velo = Number(txtvelo.value)
+            let resultado = document.getElementById('resultado') 
+
+            if (pais != 'Brasil'){
+                if(velo > 80){
+                    resultado.innerHTML = `<p>Você é Estrangeiro em uma velocidade ${velo} Km/h,<br> Você esta <strong>MULTADO</strong></p>`
+                } else {
+                    resultado.innerHTML = `<p>Você é Estrangeiro em uma velocidade ${velo} Km/h, <br> Dirija sempre com segurança</p>`
+                }
+            } else {
+                if (velo > 80){
+                    resultado.innerHTML = `<p>Você é Brasileiro em uma velocidade ${velo} Km/h,<br> Você esta <strong>MULTADO</strong></p>`
+                } else {
+                    resultado.innerHTML = `<p>Você é Brasilerio em uma velocidade ${velo} Km/h, <br> Dirija sempre com segurança</p>`
+                }
+            }
+        }
+    </script>
+</body>
+</html>
