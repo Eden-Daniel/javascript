@@ -8,27 +8,36 @@ h1{
     font-weight: bold;
     text-align: center;
 }
-div#cabeçalho{
-    display: flex;
+div#cabeçalho{    
+    text-align: center;
+    
 }
+p#entrada{
+    text-align: center;
+    font-weight: bold;
+}
+
 section{
     background-color: rgb(40, 150, 255);
-    width: 400px;
-    height: 200px;
+    max-width: 400px;
+    min-height: 200px;
     color: white;
     margin: auto;
     padding: 15px;
     border-radius: 15px;
     box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.310);
 }
-div{
 
-}
-img{
+img#imagemHora{      
     max-height: 100px;
     border-radius: 50px;
 }
-footer{
+
+div#result{
+    margin-top: 20px;
+}
+
+footer{ 
     text-align: center;
     font-weight: bold;
     font-style: italic;
