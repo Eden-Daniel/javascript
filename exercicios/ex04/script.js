@@ -28,17 +28,42 @@ function verificar(){
     var idade = anoAgora - anoNascimento
     var sexo = document.getElementsByName('radiosexo')
     var genero = ''
+
+    var img = document.createElement('img')   // criando teg image html
+    img.setAttribute('id', 'foto')   // colocando um id na teg criada
     
     if(anoNascimento < 1920 || anoNascimento > 2021){
         alert('Digite um ano entre 1920 e 2021')
     } else {
         if(sexo[0].checked){
             genero = 'Homen'
-            
+            if(idade>=0 && idade <= 10){
+                img.setAttribute('src', 'img/m_criança.png')
+            } else if (idade < 21){
+                img.setAttribute('src', 'img/m_jovem.png')
+            } else if (idade < 60){
+                img.setAttribute('src', 'img/m_adulto.png')
+            } else {
+                img.setAttribute('src', 'img/m_velho.png')
+            }            
         } else if(sexo[1].checked){
             genero = 'Mulher'
+            if(idade>=0 && idade <= 10){
+                img.setAttribute('src', 'img/f_criança.png')
+            } else if (idade < 21){
+                img.setAttribute('src', 'img/f_jovem.png')
+            } else if (idade < 60){
+                img.setAttribute('src', 'img/f_adulto.png')
+            } else {
+                img.setAttribute('src', 'img/f_velha.png')
+            }  
+
         }
-        resultado.innerHTML = `Detectamos um ${genero} de ${idade} anos`
+
+        // resultado final
+        resultado.style.textAlign = 'center'
+        resultado.innerHTML = `Detectamos um ${genero} de ${idade} anos <br>` 
+        resultado.appendChild(img)
     }
     
 }
