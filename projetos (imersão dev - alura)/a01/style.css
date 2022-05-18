@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+body{
+    background-color: rgb(218, 218, 231);
+}
+div#cabecalho{
+    /* background-color: rgb(66, 195, 255);*/
+    width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+div#quadro{
+    background-color: rgb(0, 100, 0);
+    height: 450px;
+    width: 500px;
+    margin: auto;
+    padding: 10px;    
+    text-align: center;
+    font-size: 1.3em;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 10px solid rgb(161, 115, 115);
+    box-shadow: 2px 2px 3px black;
+    font-family: 'Architects Daughter', cursive;
+    
+}
+
+div#escritaMedia{
+    margin-top: 30px;    
+    width: 250px;
+    height: 50px;
+    padding: 2px;
+    border: 2px dashed white;
+}
+
+div#escritaNotas{    
+    margin-top: 30px;
+    width: 400px;
+    border: 2px dashed white;
+}
+input{
+    margin-top: 7px;
+    margin-bottom: 9px;
+    width: 50px;
+    background-color: rgb(0, 100, 0);
+    color: white;
+    font-size: 1.1em;
+    border-color: white;
+    font-family: 'Architects Daughter', cursive;
+}
+
+input#calcular{
+    min-width: 170px;    
+}
+
+
+div#resultado{
+
+}
